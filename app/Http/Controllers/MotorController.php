@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Motor;
+use Yajra\Datatables\Datatables;
 
 use File;
+
 class MotorController extends Controller
 {
     /**
@@ -16,8 +18,12 @@ class MotorController extends Controller
     public function index()
     {
         $motor = Motor::all();
-        return view('backend.motor.index', compact('motor'));   
+        return view('backend.motor.index', compact('motor'));
+
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +54,7 @@ class MotorController extends Controller
             $file = $request->file('motor_gambar');
             $path = public_path() .
                 '/assets/img/motor/';
-            $filename = str_random(6) . '_'
+            $filename = (6) . '_'
                 . $file->getClientOriginalName();
             $upload = $file->move(
                 $path,
@@ -103,7 +109,7 @@ class MotorController extends Controller
             $file = $request->file('motor_gambar');
             $path = public_path() .
                 '/assets/img/motor/';
-            $filename = str_random(6) . '_'
+            $filename = (6) . '_'
                 . $file->getClientOriginalName();
             $upload = $file->move(
                 $path,

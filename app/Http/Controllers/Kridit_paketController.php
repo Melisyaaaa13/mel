@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kridit_paket;
+
 class Kridit_paketController extends Controller
 {
     /**
@@ -87,7 +88,7 @@ class Kridit_paketController extends Controller
         $kridit_paket->paket_bunga = $request->paket_bunga;
         $kridit_paket->paket_nilai_cicilan = $request->paket_nilai_cicilan;
         $kridit_paket->save();
-        return redirect()->route('kridit_paket.index');
+        return redirect()->route('kriditpaket.index');
     }
 
     /**

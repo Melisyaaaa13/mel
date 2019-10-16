@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Bayar_cicilan;
+use App\Bayar_cicilan;
+use App\Beli_kridit;
+
 class Bayar_cicilanController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class Bayar_cicilanController extends Controller
      */
     public function index()
     {
-        //
+        $beli_kridit = Beli_kridit::all();
+        $bayar_cicilan = Bayar_cicilan::all();
+        return view('backend.bayar_cicilan.index', compact('bayar_cicilan', 'beli_kridit'));
     }
 
     /**
@@ -23,7 +27,9 @@ class Bayar_cicilanController extends Controller
      */
     public function create()
     {
-        //
+        $beli_kridit = Beli_kridit::all();
+        $bayar_cicilan = Bayar_cicilan::all();
+        return view('backend.bayar_cicilan.create', compact('bayar_cicilan', 'beli_kridit'));
     }
 
     /**
@@ -34,7 +40,15 @@ class Bayar_cicilanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bayar_cicilan = new Bayar_cicilan();
+        $bayar_cicilan->cicilan_kode = $request->cicilan_kode;
+        $bayar_cicilan->kridit_kode = $request->kridit_kode;
+        $bayar_cicilan->cicilan_tanggal = $request->cicilan_tanggal;
+        $bayar_cicilan->cicilan_jumlah = $request->cicilan_jumlah;
+        $bayar_cicilan->cicilan_ke = $request->cicilan_ke;
+        $bayar_cicilan->cicilan_sisa_ke = $request->cicilan_sisa_ke;
+        $bayar_cicilan->save();
+        return redirect()->route('kriditpaket.index');
     }
 
     /**

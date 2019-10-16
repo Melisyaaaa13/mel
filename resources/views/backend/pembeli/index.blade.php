@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
 <div class="container">
@@ -10,7 +10,7 @@
                 <center><a href="{{ route('pembeli.create') }}" class="btn btn-primary">Tambah</a></center>
                     <br>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-hover">
                             <tr>
                                 <th>No</th>
                                 <th>No Ktp</th>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
 <div class="container">
@@ -14,19 +14,19 @@
             </div>
             <div class="form-group">
               <label for="">motor merk</label>
-              <textarea name="motor_merk" id="texteditor" cols="30" rows="5" class="form-control">{{$motor->motor_merk}}</textarea>
+              <input type="text" name="motor_merk" id="" class="form-control" aria-describedby="helpId" value="{{$motor->motor_kode}}">
             </div>
             <div class="form-group">
               <label for="">motor type</label>
-              <textarea name="motor_type" id="texteditor" cols="30" rows="5" class="form-control">{{$motor->motor_type}}</textarea>
+              <input type="text" name="motor_type" id="" class="form-control" aria-describedby="helpId" value="{{$motor->motor_kode}}">
             </div>
             <div class="form-group">
               <label for="">motor warna</label>
-              <textarea name="motor_warna" id="texteditor" cols="30" rows="5" class="form-control">{{$motor->motor_warna}}</textarea>
+              <input type="text" name="motor_warna" id="" class="form-control" aria-describedby="helpId" value="{{$motor->motor_kode}}">
             </div>
             <div class="form-group">
               <label for="">motor harga</label>
-              <textarea name="motor_harga" id="texteditor" cols="30" rows="5" class="form-control">{{$motor->motor_harga}}</textarea>
+              <input type="text" name="motor_harga" id="" class="form-control" aria-describedby="helpId" value="{{$motor->motor_kode}}">
             </div>
             <div class="form-group">
               <label for="">motor gambar</label>

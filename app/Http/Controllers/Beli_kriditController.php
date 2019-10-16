@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Beli_kridit;
+use App\Beli_kridit;
+use App\Motor;
+use App\Pembeli;
+
 class Beli_kriditController extends Controller
 {
     /**
@@ -13,7 +16,10 @@ class Beli_kriditController extends Controller
      */
     public function index()
     {
-        //
+        $motor = Motor::all();
+        $pembeli = Pembeli::all();
+        $beli_kridit = Beli_kridit::all();
+        return view('backend.beli_kridit.index', compact('beli_kridit', 'motor', 'pembeli'));
     }
 
     /**
@@ -23,7 +29,10 @@ class Beli_kriditController extends Controller
      */
     public function create()
     {
-        //
+        $motor = Motor::all();
+        $pembeli = Pembeli::all();
+        $beli_kridit = Beli_kridit::all();
+        return view('backend.beli_kridit.create', compact('beli_kridit', 'motor', 'pembeli'));
     }
 
     /**
@@ -34,7 +43,16 @@ class Beli_kriditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $beli_kridit = new Beli_kridit();
+        $beli_kridit->kridit_kode = $request->kridit_kode;
+        $beli_kridit->no_ktp = $request->no_ktp;
+        // $beli_kridit->paket_kode = $request->paket_kode;
+        $beli_kridit->motor_kode = $request->motor_kode;
+        $beli_kridit->kridit_tanggal = $request->kridit_tanggal;
+
+
+        $beli_kridit->save();
+        return redirect()->route('belikridit.index');
     }
 
     /**
