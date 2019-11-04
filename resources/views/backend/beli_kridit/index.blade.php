@@ -28,7 +28,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $data->kridit_kode }}</td>
-                    <td>{{ $data->pembelis->no_ktp }}</td>
+                    <td>{{ $data->pembeli->no_ktp }}</td>
                     {{-- <td>{{ $data->kridit_pakets->paket_kode }}</td> --}}
                     <td>{{ $data->motors->motor_kode }}</td>
                     <td>{{ $data->kridit_tanggal }}</td>
